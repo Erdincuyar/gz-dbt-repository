@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: raw                   # artık veri kümesi (dataset) için takma ad
+    description: "Greenweez raw data kaynak tablosu"
+    database: "{{ target.project }}"
+    schema: gz_raw_data         # BigQuery’deki gerçek dataset adı
+
+    tables:
+      - name: sales
+        description: "Satış verilerini içerir"
+        identifier: raw_gz_sales    # BigQuery'deki gerçek tablo adı
+
+      - name: product
+        description: "Ürün bilgilerini içerir"
+        identifier: raw_gz_product  # BigQuery'deki gerçek tablo adı
+
+      - name: ship
+        description: "Kargo ve gönderim bilgilerini içerir"
+        identifier: raw_gz_ship     # BigQuery'deki gerçek tablo adı
